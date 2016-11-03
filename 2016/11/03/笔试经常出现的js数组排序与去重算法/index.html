@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>笔试中经常出现的js数组排序与去重算法 | yuzmb的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试中经常出现的js数组排序与去重算法">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/笔试经常出现的js数组排序与去重算法/index.html">
+<meta property="og:site_name" content="yuzmb的博客">
+<meta property="og:description" content="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。">
+<meta property="og:updated_time" content="2016-11-03T16:40:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试中经常出现的js数组排序与去重算法">
+<meta name="twitter:description" content="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。">
+  
+    <link rel="alternative" href="/atom.xml" title="yuzmb的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("fc4oEcJYVyqQI04esr3sod6M-gzGzoHsz", "szh3wn6c3Oq6h9n8Jnr3TeJ0");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">yuzmb</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">学习前端的一些总结</p>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuzmb" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/744245329@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">yuzmb</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/head.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">yuzmb</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">学习前端的一些总结</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuzmb" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/744245329@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-笔试经常出现的js数组排序与去重算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/03/笔试经常出现的js数组排序与去重算法/" class="article-date">
+  	<time datetime="2016-11-02T16:00:00.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      笔试中经常出现的js数组排序与去重算法
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+	</div>
+
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/11/03/笔试经常出现的js数组排序与去重算法/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="笔试中经常出现的js数组排序与去重算法">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。"><a href="#数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。" class="headerlink" title="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。"></a>数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。</h3><a id="more"></a>
+<h3 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h3><h4 id="从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果"><a href="#从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果" class="headerlink" title="从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果"></a>从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 9, 4, 50, 49, 6, 3, 2];</div><div class="line"></div><div class="line">function test()&#123;</div><div class="line">  for (var i = 0; i &lt; arr.length - 1; i++)&#123;</div><div class="line">    for (var j = i + 1; j &lt; arr.length; j++)&#123;</div><div class="line">      var tempi = arr[i]; //获取第一个值，并与后一个值比较</div><div class="line">      var tempj = arr[j];</div><div class="line">      if (tempi &gt; tempj)&#123;</div><div class="line">        arr[i] = tempj;</div><div class="line">        arr[j] = tempi;//如果前一个值比后一个值大，那么相互交换</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125; </div><div class="line">  console.log(arr); //return arr；</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();//调用函数</div></pre></td></tr></table></figure>
+<h3 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h3><h4 id="在数组中间那一个值，然后用这个值跟数组里面的值相比较，大于此值的放在一边，小于的也放在一边，然后用concat-合并，再进行比较，如此反复"><a href="#在数组中间那一个值，然后用这个值跟数组里面的值相比较，大于此值的放在一边，小于的也放在一边，然后用concat-合并，再进行比较，如此反复" class="headerlink" title="在数组中间那一个值，然后用这个值跟数组里面的值相比较，大于此值的放在一边，小于的也放在一边，然后用concat()合并，再进行比较，如此反复"></a>在数组中间那一个值，然后用这个值跟数组里面的值相比较，大于此值的放在一边，小于的也放在一边，然后用concat()合并，再进行比较，如此反复</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 9, 4, 50, 49, 6, 3, 2];</div><div class="line"></div><div class="line">function test(arr)&#123;</div><div class="line">  if (arr.length &lt;= 1) return arr;//如果数组只有一位，就没有必要比较了</div><div class="line">  var index = Math.floor(arr.length / 2);//获取中间值的索引</div><div class="line">  var cur = arr.splice(index, 1);//截取中间值</div><div class="line">  var left = [], right = [];//小于中间值的放在left数组里，大于的放在right数组</div><div class="line">  for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">    if (cur &gt; arr[i])&#123;</div><div class="line">      left.push(arr[i]);</div><div class="line">    &#125; else&#123;</div><div class="line">      right.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return test(left).concat(cur, test(right));//通过递归，上一轮比较好的数组合并，并且再次进行比较</div><div class="line">&#125;</div><div class="line"></div><div class="line">test(arr);</div></pre></td></tr></table></figure>
+<h3 id="sort-方法：简单粗暴"><a href="#sort-方法：简单粗暴" class="headerlink" title="sort()方法：简单粗暴"></a>sort()方法：简单粗暴</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 9, 4, 50, 49, 6, 3, 2];</div><div class="line"></div><div class="line">function test()&#123;</div><div class="line">  return arr.sort(sortNumber);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function sortNumber(a, b)&#123;</div><div class="line">  return a - b;</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div></pre></td></tr></table></figure>
+<h2 id="笔者常用的数组去重方法："><a href="#笔者常用的数组去重方法：" class="headerlink" title="笔者常用的数组去重方法："></a>笔者常用的数组去重方法：</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var arr = [1, &apos;a&apos;, &apos;a&apos;, &apos;b&apos;, &apos;d&apos;, &apos;e&apos;, &apos;e&apos;, 1, 0]</div><div class="line"></div><div class="line">function test()&#123;</div><div class="line">  for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">    for(var j = i + 1; j &lt; arr.length; j++)&#123;</div><div class="line">      if(arr[i] === arr[j]) arr.splice(j,1);//如果前一个值与后一个值相等，那么就去掉后一个值，splice()可以修改原数组</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 1, 4, 50, 50, 6, 2, 2];</div><div class="line"></div><div class="line">function test()&#123;</div><div class="line">  return arr.filter(function(item,index,array)&#123;</div><div class="line">    return array.indexOf(item) === index; </div><div class="line">    //或者这样写return array.indexOf(item, index+1) === -1; 如果没有重复项，返回true</div><div class="line">    //用filter方法，返回ietm对应的indexOf索引值与本身index索引值相等的值，也就是去掉重复的值，filter本身不修改数组，只是会自动遍历数组，去掉重复值后，那么arr就剩下不重复的了</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();//输出Array [ 1, 4, 50, 6, 2 ]</div></pre></td></tr></table></figure>
+<h3 id="方法三-ES6"><a href="#方法三-ES6" class="headerlink" title="方法三(ES6)"></a>方法三(ES6)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 1, 4, 50, 50, 6, 2, 2];</div><div class="line"></div><div class="line">function unique(arr)&#123;</div><div class="line">  return Array.from(new Set(arr));</div><div class="line">&#125;</div><div class="line"></div><div class="line">unique(arr);</div></pre></td></tr></table></figure>
+<p>还有一些方法，我也没用过，前两种是笔者经常用的~~</p>
+<p>(完)</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/29/理解JavaScript---闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深刻理解JavaScript---闭包</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="笔试经常出现的js数组排序与去重算法" data-title="笔试中经常出现的js数组排序与去重算法" data-url="http://yoursite.com/2016/11/03/笔试经常出现的js数组排序与去重算法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"yuzmb"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 yuzmb
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
