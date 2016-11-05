@@ -163,7 +163,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。"><a href="#数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。" class="headerlink" title="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。"></a>数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。</h3>
+        <h3 id="数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。"><a href="#数组排序比较常用的：冒泡排序、快速排序、sort-方法排序；数组去重方法也有很多。" class="headerlink" title="数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。"></a>数组排序比较常用的：冒泡排序、快速排序、sort()方法排序；数组去重方法也有很多。</h3><h3 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h3><h4 id="从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果"><a href="#从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果" class="headerlink" title="从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果"></a>从数组中随便拿一个数与后一位比较，如果前者比后者大，那么两者交换位置，从而遍历数组可以得到排序的效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 9, 4, 50, 49, 6, 3, 2];</div><div class="line"></div><div class="line">function test()&#123;</div><div class="line">  for (var i = 0; i &lt; arr.length - 1; i++)&#123;</div><div class="line">    for (var j = i + 1; j &lt; arr.length; j++)&#123;</div><div class="line">      var tempi = arr[i]; //获取第一个值，并与后一个值比较</div><div class="line">      var tempj = arr[j];</div><div class="line">      if (tempi &gt; tempj)&#123;</div><div class="line">        arr[i] = tempj;</div><div class="line">        arr[j] = tempi;//如果前一个值比后一个值大，那么相互交换</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125; </div><div class="line">  console.log(arr); //return arr；</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();//调用函数</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -235,7 +235,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"><a href="#闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。" class="headerlink" title="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"></a>闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。</h3>
+        <h3 id="闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"><a href="#闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。" class="headerlink" title="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"></a>闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。</h3><ul>
+<li>闭包#1</li>
+</ul>
+<p>先来看一个函数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f()&#123;</div><div class="line">  var b = &quot;b&quot;;</div><div class="line">  return function()&#123;</div><div class="line">    return b;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个函数含有一个局部变量b，它在全局空间里面是不可见的。而f()的返回值是另一个匿名函数，该函数有自己的私有的空间，可以访问f()的空间和全局空间，所以b对它来说是可见的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = f();</div><div class="line">n();//此时控制台输出&quot;b&quot;</div></pre></td></tr></table></figure></p>
+<p>因为f()是一个全局函数，它可以在全局空间被调用，当然也可以将其返回值赋值给另一个全局变量n，从而生成一个可以访问f()私有空间的新的全局函数。<br>
       
     </div>
     

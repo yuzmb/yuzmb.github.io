@@ -9,16 +9,25 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。">
+  <meta name="description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。
+闭包#1
+
+先来看一个函数:123456function f()&amp;#123;  var b = &amp;quot;b&amp;quot;;  return function()&amp;#123;    retu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深刻理解JavaScript---闭包">
 <meta property="og:url" content="http://yoursite.com/2016/10/29/理解JavaScript---闭包/index.html">
 <meta property="og:site_name" content="yuzmb的博客">
-<meta property="og:description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。">
-<meta property="og:updated_time" content="2016-10-31T13:57:20.000Z">
+<meta property="og:description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。
+闭包#1
+
+先来看一个函数:123456function f()&amp;#123;  var b = &amp;quot;b&amp;quot;;  return function()&amp;#123;    retu">
+<meta property="og:updated_time" content="2016-11-05T15:54:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深刻理解JavaScript---闭包">
-<meta name="twitter:description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。">
+<meta name="twitter:description" content="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。
+闭包#1
+
+先来看一个函数:123456function f()&amp;#123;  var b = &amp;quot;b&amp;quot;;  return function()&amp;#123;    retu">
   
     <link rel="alternative" href="/atom.xml" title="yuzmb的博客" type="application/atom+xml">
   
@@ -182,13 +191,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"><a href="#闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。" class="headerlink" title="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"></a>闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。</h3><a id="more"></a>
-<ul>
+        <h3 id="闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"><a href="#闭包是指那些能够访问独立-自由-变量的函数-变量在本地使用，但定义在一个封闭的作用域中-。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。" class="headerlink" title="闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。"></a>闭包是指那些能够访问独立(自由)变量的函数 (变量在本地使用，但定义在一个封闭的作用域中)。换句话说，这些函数可以“记忆”它被创建时候的环境。——这句话其实有点难以理解。我觉得应该用一些例子来理解闭包的含义。</h3><ul>
 <li>闭包#1</li>
 </ul>
 <p>先来看一个函数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f()&#123;</div><div class="line">  var b = &quot;b&quot;;</div><div class="line">  return function()&#123;</div><div class="line">    return b;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这个函数含有一个局部变量b，它在全局空间里面是不可见的。而f()的返回值是另一个匿名函数，该函数有自己的私有的空间，可以访问f()的空间和全局空间，所以b对它来说是可见的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var n = f();</div><div class="line">n();//此时控制台输出&quot;b&quot;</div></pre></td></tr></table></figure></p>
-<p>因为f()是一个全局函数，它可以在全局空间被调用，当然也可以将其返回值赋值给另一个全局变量n，从而生成一个可以访问f()私有空间的新的全局函数。</p>
+<p>因为f()是一个全局函数，它可以在全局空间被调用，当然也可以将其返回值赋值给另一个全局变量n，从而生成一个可以访问f()私有空间的新的全局函数。<br><a id="more"></a></p>
 <ul>
 <li>闭包#2</li>
 </ul>
